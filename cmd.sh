@@ -7,7 +7,7 @@ if [ "$ENV" = 'DEV' ]; then
 elif [ "$ENV" = 'UNIT' ]; then 
   echo "Running Unit Tests"
   exec python "tests.py"
-elif [ "$ENV" = "PROD_TEST" ]; then
+elif [ "$ENV" = 'PROD_TEST' ]; then
   echo "Running Production Server after testing"
   exec python "tests.py"
   exec uwsgi --http 0.0.0.0:9090 --wsgi-file /app/identidock.py \
